@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+    <title>CADASTRO</title>
+
+    <style>
+        .msg {
+            text-align: center;
+            border: 0.2em solid blue;
+            border-radius: 1.6em;
+            font-weight: bold;
+            width: 40em;
+            padding: 0.5em;
+            margin: 1em auto 1em;
+            list-style-type: none;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #select {
+            border: none;
+            background: none;
+            display: block;
+            text-align: center;
+            margin: 2.5em auto 2em;
+            font-family: 'Play', sans-serif;
+            border: 0.2em solid #34495e;
+            padding: 1em 1.5em;
+            width: 16em;
+            outline: none;
+            border-radius: 1.6em;
+            color: #ffffff;
+            transition: 1s;
+        }
+
+        #select:hover {
+            width: 25em;
+            background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+            transition: 1s;
+        }
+
+        #select:focus {
+            border: none;
+            background: none;
+            display: block;
+            text-align: center;
+            margin: 2.5em auto 2em;
+            font-family: 'Play', sans-serif;
+            border-bottom: 0.2em solid #34495e;
+            padding: 1em 1.5em;
+            width: 24em;
+            outline: none;
+            border-radius: 1.6em;
+            color: #000000;
+            transition: 1s;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #ffffff;
+        }
+
+        :-moz-placeholder {
+            /* Firefox 18- */
+            color: #ffffff;
+        }
+
+        ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: #ffffff;
+        }
+
+        :-ms-input-placeholder {
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+
+<body class="cad">
+    <ul class="msg" id="mensagem1">
+        <li>
+            O campo CEP deve conter apenas números.
+        </li>
+    </ul>
+    <ul class="msg" id="mensagem2">
+        <li>
+            O campo E-mail deve conter um '@' e um '.' no minimo.
+        </li>
+    </ul>
+    <ul class="msg" id="mensagem3">
+        <li>
+            O campo nome precisa ser preenchido corretamente, apenas com letras.
+        </li>
+    </ul>
+    <ul class="msg" id="mensagem4">
+        <li>
+            Digite apenas números no campo telefone.
+        </li>
+    </ul>
+    <ul class="msg" id="mensagem6">
+        <li>
+            Digite uma senha.
+        </li>
+    </ul>
+    <ul class="msg" id="mensagem7">
+        <li>
+            Escolha um nome de Usuario com mais de 3 caracter
+        </li>
+    </ul>
+
+    <form name=formcad class="box" method="POST" action="processa.php" onsubmit="return validacao()">
+        <h1><img id="img1" src="img/img_Cad_Ini/cad23.gif" alt="GIF"></h1>
+        <div class="conteinerbox">
+            <fieldset id="dados">
+                <legend>Dados Pessoais</legend>
+                <input type="text" name="name" placeholder="Primeiro Nome" maxlength="50"
+                    onmousemove="showinput('mensagem3')" onmouseout="showinput1('mensagem3')">
+                <input type="text" name="phone" placeholder="Telefone" maxlength="15"
+                    onmousemove="showinput('mensagem4')" onmouseout="showinput1('mensagem4')"
+                    onkeyup="mascara(this, mtel)">
+                <input type="text" name="city" placeholder="Cidade" maxlength="30" onmousemove="showinput('mensagem5')"
+                    onmouseout="showinput1('mensagem5')">
+                <input type="text" name="cep" placeholder="CEP" maxlength="9" min="0"
+                    onmousemove="showinput('mensagem1')" onmouseout="showinput1('mensagem1')"
+                    onkeyup="mascara(this, mcep)">
+                <select id="select" name="sel">
+                    <option disabled selected>Estado</option>
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                    <option>TO</option>
+                </select>
+                <fieldset id="SEX">
+                    <legend>Sexo</legend>
+                    <input type="radio" name="SEXO" id="sexm" value="Feminino"><label for="sexm">Feminino</label><br>
+                    <input type="radio" name="SEXO" id="sexh" value="Masculino"><label for="sexh">Masculino</label>
+                </fieldset>
+            </fieldset>
+
+            <fieldset id="user">
+                <legend>Dados de Acesso</legend>
+                <input type="email" name="email1" placeholder="E-mail" maxlength="30"
+                    onmousemove="showinput('mensagem2')" onmouseout="showinput1('mensagem2')">
+                <input type="text" name="login" placeholder="Login" maxlength="30" onmousemove="showinput('mensagem7')"
+                    onmouseout="showinput1('mensagem7')">
+                <select id="select" name="sel1">
+                    <option disabled selected>Tipo de usuario</option>
+                    <option>Administrador</option>
+                    <option>Editor</option>
+                    <option>Assinante</option>
+                </select>
+                <input type="password" name="senha" placeholder="senha" maxlength="30"
+                    onmousemove="showinput('mensagem6')" onmouseout="showinput1('mensagem6')">
+                <input type="password" name="confimsenha" placeholder="Confirmar senha" maxlength="30">
+                <input type="submit" value="Cadastrar">
+            </fieldset>
+        </div>
+        <p>Já possui uma conta?</p>
+        <a id="cabox" href="index.html">Login</a>
+    </form>
+
+    <script lang="javascript">
+
+        /*https://celke.com.br/artigo/como-validar-formulario-com-javascript
+            */
+
+        // As duas funções abaixo é para mostrar uma msg ao passar o mouse em cima de um input
+        function showinput(id) {
+            var elem = document.getElementById(id);
+            elem.style.display = 'block';
+        }
+
+        function showinput1(id) {
+            var elem = document.getElementById(id);
+            elem.style.display = 'none';
+        }
+
+        // A função abaixo é para validar os campos input
+        function validacao() {
+            if (document.formcad.cep.value == "") {
+                alert('O campo CEP deve conter apenas números');
+                document.formcad.cep.focus();
+                return false;
+            }
+
+            if (document.formcad.SEXO[0].checked == false
+                && document.formcad.SEXO[1].checked == false) {
+                alert('Por favor, selecione o tipo de Sexo.');
+                return false;
+            }
+
+            if (document.formcad.sel1.selectedIndex == 0) {
+                alert("Escolha um tipo de usuario");
+                formcad.sel1.focus();
+                return false;
+            }
+
+            if (document.formcad.sel.selectedIndex == 0) {
+                alert("Escolha um estado");
+                formcad.sel.focus();
+                return false;
+            }
+
+            if (document.formcad.email1.value == "" || !(/\w+@\w+\.+[a-zA-Z]/).test(document.formcad.email1.value)) {
+                alert('O campo E-mail deve conter um "@" e um "." no minimo');
+                document.formcad.email1.focus();
+                return false;
+            }
+
+            if (document.formcad.senha.value == "" || document.formcad.confimsenha.value != document.formcad.senha.value || document.formcad.senha.value.length < 6) {
+                alert("O campo de confirmação de senha não coincide com o campo senha ou a senha tem que ser maior que três caracter")
+                document.formcad.confimsenha.focus();
+                return false;
+            }
+
+            if (document.formcad.name.value == "" || !(/\w+[a-zA-Z]/).test(document.formcad.name.value) || document.formcad.name.value.length < 3) {
+                alert("O campo nome precisa ser preenchido corretamente com mais de 3 caracter.")
+                document.formcad.name.focus();
+                return false;
+            }
+
+            if (document.formcad.phone.value == "" || document.formcad.phone.length < 11) {
+                alert("preencha campo Telefone corretamente.");
+                document.formcad.phone.focus();
+                return false;
+            }
+
+            if (document.formcad.email1.value == "") {
+                alert("preencha campo E-mail corretamente.");
+                document.formcad.email1.focus();
+                return false;
+            }
+
+            if (document.formcad.login.value == "" || document.formcad.login.value.length < 3) {
+                alert("preencha campo login corretamente.");
+                document.formcad.login.focus();
+                return false;
+            }
+        }
+
+        // precisa ser estudado
+        /* Máscaras ER */ // http://wbruno.com.br/expressao-regular/diversas-mascaras-com-er/
+        //funções que disparam a validação:
+
+        /* A função máscara recebe um objeto o e uma função f, e os guarda nas variáveis globais v_obj e v_fun. Ela chama então num Timeout a função execmascara, que executa a função v_fun no valor do objeto v_obj. A função v_fun pode fazer qualquer coisa que você quiser que receba uma string e retorne outra. Por exemplo, para fazer um campo que converte o texto para leech script, usamos:
+        */
+
+        function mascara(o, f) {
+            v_obj = o
+            v_fun = f
+            setTimeout("execmascara()", 1)
+        }
+
+        function execmascara() {
+            v_obj.value = v_fun(v_obj.value)
+        }
+
+        // PHONE Máscara ER
+        function mtel(v) {
+            v = v.replace(/\D/g, "");             //Remove tudo o que não é dígito
+            v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+            v = v.replace(/(\d)(\d{4})$/, "$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+            return v;
+        }
+
+        // CEP Máscara ER
+        function mcep(v) {
+            v = v.replace(/\D/g, "")                    //Remove tudo o que não é dígito
+            v = v.replace(/^(\d{5})(\d)/, "$1-$2")
+            return v
+        }
+    </script>
+
+
+</body>
+
+</html>

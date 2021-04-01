@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.index{
+    font-family: 'Play', sans-serif;
+    color: #ffffff;
+
+    background: url('background/background_Login/3.gif') no-repeat top center fixed;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.conteudo{
+    background: #2c3e50b3;
+    width: 30em;
+    height: 40em;
+    margin: 5em auto 3em;
+    padding: 1em 1em;
+    border-radius: 0.9em;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+
+}
+
+.conteudo input[type=text], .conteudo input[type=password]{
+    border: none;
+    background: none;
+    display: block;
+    text-align: center;
+    margin: 2.5em auto 2em;
+    font-family: 'Play', sans-serif;
+    border: 0.2em solid #34495e;
+    padding: 1em 1.5em;
+    width: 16em;
+    outline: none;
+    border-radius: 1.6em;
+    color: #ffffff;
+    transition: 1s;
+}
+
+.conteudo input[type=text]:hover, .conteudo input[type=password]:hover{
+    width: 25em;
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    transition: 1s;
+
+}
+.conteudo input[type=text]:focus, .conteudo input[type=password]:focus{
+    border: none;
+    background: none;
+    display: block;
+    text-align: center;
+    margin: 2.5em auto 2em;
+    font-family: 'Play', sans-serif;
+    border-bottom: 0.2em solid #34495e;
+    padding: 1em 1.5em;
+    width: 24em;
+    outline: none;
+    border-radius: 1.6em;
+    color: #ffffff;
+    transition: 1s;
+}
+.conteudo input[type=submit]{
+    border: none;
+    background: none;
+    display: block;
+    text-align: center;
+    margin: 2.5em auto 2em;
+    font-family: 'Play', sans-serif;
+    border: 0.2em solid #3498db;
+    padding: 1em 1.5em;
+    width: 10em;
+    outline: none;
+    border-radius: 1.6em;
+    color: #ffffff;
+    transition: 1s;
+}
+.conteudo input[type=submit]:hover{
+    background-image: linear-gradient(to top, #00c6fb4d 0%, #005bea4d 100%);
+    width: 16em;
+    transition: 1s;
+}
+.container{
+    margin-bottom: 4.5em;
+}
+a{
+    font-size: 1.2em;
+    text-decoration: blink;
+    color: #3498db;
+}
+p{
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+#cl1{
+    margin-right: 5em;
+}
+#cl1:hover{
+    border: none;
+    background: none;
+    font-family: 'Play', sans-serif;
+    background: #ffffff4d;
+    padding: 0.5em 0.5em;
+    width: 10em;
+    outline: none;
+    border-radius: 0.5em;
+    color: #ffffff;
+    transition: 1s;
+}
+#cl2:hover{
+    border: none;
+    background: none;
+    font-family: 'Play', sans-serif;
+    background: #ffffff4d;
+    padding: 0.5em 0.5em;
+    width: 10em;
+    outline: none;
+    border-radius: 0.5em;
+    color: #ffffff;
+    transition: 1s;
+}
+
+#cl3:hover{
+    border: none;
+    font-size: 1.3em;
+    background: none;
+    font-family: 'Play', sans-serif;
+    background: #ffffff4d;
+    padding: 0.3em 0.3em;
+    width: 8em;
+    outline: none;
+    border-radius: 0.5em;
+    color: #ffffff;
+    transition: 1s;
+}
+
+
+
+
+
+
+
+/* TELA DE CADASTRO INICIAL */
+
+.cad{
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #ffffff;
+
+    background: url('background/background_Cad_Ini/TELA_CAD.jpg') no-repeat top center fixed;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.box{
+    background: #2c3e50b3;
+    width: 45em;
+    height: 39em;
+    margin: 3em auto 2em;
+    padding: 0 1em;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    border-radius: 0.9em;
+}
+.conteinerbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+}
+.cad input[type=text],.cad input[type=email], .cad input[type=password]{
+    border: none;
+    background: none;
+    display: block;
+    text-align: center;
+    margin: 2.5em auto 2em;
+    font-family: 'Play', sans-serif;
+    border: 0.2em solid #34495e;
+    padding: 1em 1.5em;
+    width: 16em;
+    outline: none;
+    border-radius: 1.6em;
+    color: #ffffff;
+    transition: 1s;
+}
+.cad input[type=text]:hover, .cad input[type=email]:hover, .cad input[type=password]:hover{      
+    width: 25em;
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    transition: 1s;
+}
+
+.cad input[type=text]:focus, .cad input[type=email]:focus, .cad input[type=password]:focus{
+    border: none;
+    background: none;
+    display: block;
+    text-align: center;
+    margin: 2.5em auto 2em;
+    font-family: 'Play', sans-serif;
+    border-bottom: 0.2em solid #34495e;
+    padding: 1em 1.5em;
+    width: 24em;
+    outline: none;
+    border-radius: 1.6em;
+    color: #ffffff;
+    transition: 1s;
+}
+
+.cad input[type=submit]{
+    border: none;
+    background: none;
+    display: block;
+    text-align: center;
+    margin: 2.5em auto 2em;
+    font-family: 'Play', sans-serif;
+    border: 0.2em solid #3498db;
+    padding: 1em 1.5em;
+    width: 10em;
+    outline: none;
+    border-radius: 1.6em;
+    color: #ffffff;
+    transition: 1s;
+}
+
+.cad input[type=submit]:hover{
+    background-image: linear-gradient(to top, #00c6fb4d 0%, #005bea4d 100%);
+    width: 16em;
+    transition: 1s;
+}
+
+#dados{
+    width: 20em;
+    height: 25em;
+    margin-right: 2.5em;
+}
+#dados:hover{
+    background-image: linear-gradient(to top, rgb(172, 203, 238,0.5) 0%, rgb(231, 240, 253,0.5) 100%);
+}
+#user{
+    width: 20em;
+    height: 25em;
+}#user:hover{
+    background-image: linear-gradient(to top, rgb(172, 203, 238,0.5) 0%, rgb(231, 240, 253,0.5) 100%);
+}
+
+#cabox:hover{
+    border: none;
+    background: none;
+    font-family: 'Play', sans-serif;
+    background: #ffffff4d;
+    padding: 0.3em 0.3em;
+    width: 10em;
+    outline: none;
+    border-radius: 0.5em;
+    color: #ffffff;
+    transition: 1s;
+}
+
+/* TELA DE CADASTRO FINAL */
+
+.cad2{
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #ffffff;
+
+    background: url('background/background_Cad_Fim/Tela3.jpg') no-repeat top center fixed;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.box2{
+    background: #2c3e50b3;
+    width: 43em;
+    height: 15em;
+    margin: 5em auto 1em;
+    padding: 1em 1em;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    border-radius: 0.9em;
+}
+
+#cad2box{
+    padding-top:2em; 
+}
+
+#cad2box1{
+    margin-bottom: 2em;
+}
+
+#cad2box2{
+    color: #f39c12;
+}
+
+#cad2box2:hover{
+    background: none;
+    font-family: 'Play', sans-serif;
+    border: 0.2em solid #3498db;
+    background: #ffffff4d;
+    padding: 0.5em 0.5em;
+    width: 50em;
+    outline: none;
+    border-radius: 1.6em;
+    color: #ffffff;
+    transition: 1s;
+}
